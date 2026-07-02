@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amanuel Getachew — Software engineer &amp; consultant, Milan</title>
+<meta name="description" content="Independent software engineer in Milan. Spring Boot backends, Flutter apps, full products — designed, built, and running in production.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23faf7f2'/%3E%3Ccircle cx='8' cy='8' r='4' fill='%233e6b4f'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --paper: #faf7f2;
+    --ink: #24201b;
+    --ink-soft: #5a4e46;
+    --ink-faint: #8a7e76;
+    --rule: #e5dcce;
+    --copper: #8b5e3c;
+    --live: #3e6b4f;
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+    --serif: Georgia, "Times New Roman", serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { background: var(--paper); }
+
+  body {
+    font-family: var(--serif);
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 4rem;
+  }
+
+  a { color: var(--copper); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  a:hover { border-bottom-color: var(--copper); }
+  a:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; border-bottom-color: transparent; }
+
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .masthead .name { font-size: 1rem; letter-spacing: 0.02em; }
+  .masthead .place {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .hero { padding: 3.2rem 0 2.6rem; }
+  .hero h1 {
+    font-size: clamp(1.9rem, 5.5vw, 2.7rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    max-width: 14ch;
+  }
+  .hero h1 .live-word { color: var(--live); }
+  .hero p {
+    margin-top: 1.3rem;
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+    max-width: 52ch;
+  }
+  .hero .avail {
+    margin-top: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+  }
+  .hero .avail a { color: var(--copper); }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0;
+  }
+
+  section { margin-top: 3rem; }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.2rem 1.5rem;
+    padding: 1.3rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .entry h3 { font-size: 1.05rem; font-weight: 700; letter-spacing: 0.01em; }
+  .entry h3 a { color: var(--ink); border-bottom: 1px solid var(--rule); }
+  .entry h3 a:hover { border-bottom-color: var(--ink); }
+  .entry .desc {
+    grid-column: 1;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  .entry .meta {
+    grid-column: 1 / -1;
+    margin-top: 0.55rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .entry .status {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .status a { border-bottom: none; }
+  .status .stamp { color: var(--live); }
+  .status .stamp::before { content: "●"; font-size: 0.6rem; margin-right: 0.45em; vertical-align: 0.1em; }
+  .status .stamp-plain { color: var(--live); }
+  .status .stamp-bench { color: var(--ink-faint); }
+  .status .stamp-bench::before { content: "○"; font-size: 0.6rem; margin-right: 0.45em; vertical-align: 0.1em; }
+
+  .service { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+  .service h3 { font-size: 0.98rem; font-weight: 700; display: inline; }
+  .service p { display: inline; font-size: 0.92rem; color: var(--ink-soft); }
+  .service h3::after { content: " — "; font-weight: 400; color: var(--ink-soft); }
+
+  .contact { margin-top: 3.2rem; }
+  .contact p { font-size: 1.05rem; margin-top: 1.2rem; max-width: 48ch; }
+  .contact .channels {
+    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  @media (max-width: 540px) {
+    body { padding-top: 2.2rem; }
+    .entry { grid-template-columns: 1fr; }
+    .entry .status { grid-column: 1; grid-row: auto; margin-top: 0.3rem; }
+    footer { flex-direction: column; gap: 0.3rem; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .rise {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: rise 0.55s ease-out forwards;
+    }
+    .rise:nth-child(2) { animation-delay: 0.08s; }
+    .rise:nth-child(3) { animation-delay: 0.16s; }
+    .rise:nth-child(4) { animation-delay: 0.24s; }
+    .rise:nth-child(5) { animation-delay: 0.32s; }
+    .rise:nth-child(6) { animation-delay: 0.4s; }
+    .rise:nth-child(7) { animation-delay: 0.48s; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="name">Amanuel Getachew</span>
+  <span class="place">Milan, Italy</span>
+</header>
+
+<div class="hero">
+  <h1>Everything on this page is <span class="live-word">live</span>.</h1>
+  <p>I design, build, and run software end to end — Java backends, Flutter apps, and the deployment underneath. No mockups below: every project links to a product you can open right now.</p>
+  <p class="avail">Available for contract work → <a href="mailto:amantwd@gmail.com">amantwd@gmail.com</a></p>
+</div>
+
+<section>
+  <h2 class="eyebrow">Shipped &amp; running</h2>
+
+  <article class="entry rise">
+    <h3><a href="https://qr-once.com">Qronce</a></h3>
+    <span class="status"><a href="https://qr-once.com" class="stamp">live · qr-once.com</a></span>
+    <p class="desc">QR codes you can edit after printing. Dynamic redirects, scan analytics by device and country, custom design, tiered plans.</p>
+    <p class="meta">Spring Boot · PostgreSQL · Next.js · single-VPS ops</p>
+  </article>
+
+  <article class="entry rise">
+    <h3><a href="https://play.google.com/store/apps/details?id=com.aman.pcosindaga">PCOS Indaga</a></h3>
+    <span class="status"><a href="https://play.google.com/store/apps/details?id=com.aman.pcosindaga" class="stamp">live · google play</a></span>
+    <p class="desc">Symptom tracking and pattern insights for people with PCOS. Local-first and private by design, health-data integration, doctor-ready PDF summaries, nine languages.</p>
+    <p class="meta">Flutter · Drift/SQLite · Riverpod · HealthKit</p>
+  </article>
+
+  <article class="entry rise">
+    <h3><a href="https://play.google.com/store/apps/details?id=com.aman.debtwise">Debtwise</a></h3>
+    <span class="status"><a href="https://play.google.com/store/apps/details?id=com.aman.debtwise" class="stamp">live · google play</a> · <a href="https://apps.apple.com/app/debtwise/id6759857721" class="stamp-plain">app store</a></span>
+    <p class="desc">Debt payoff planner. Pick a strategy — snowball or avalanche — see the payoff date move as you adjust payments.</p>
+    <p class="meta">Flutter · iOS &amp; Android</p>
+  </article>
+
+  <article class="entry rise">
+    <h3><a href="https://apps.apple.com/app/heirloom-write-to-future-you/id6760857992">Heirloom</a></h3>
+    <span class="status"><a href="https://apps.apple.com/app/heirloom-write-to-future-you/id6760857992" class="stamp">live · app store</a></span>
+    <p class="desc">A digital time capsule. Write letters and save memories that stay sealed until a date you choose.</p>
+    <p class="meta">Flutter · iOS &amp; Android</p>
+  </article>
+
+  <article class="entry rise">
+    <h3><a href="https://kontashop.com">Kontashop</a></h3>
+    <span class="status"><a href="https://kontashop.com" class="stamp">live · kontashop.com</a></span>
+    <p class="desc">Marketplace for kids' goods in Ethiopia — web storefront, mobile app, and admin, all on one API. English and Amharic.</p>
+    <p class="meta">Spring Boot · Nuxt · Flutter · Liquibase</p>
+  </article>
+
+  <article class="entry rise">
+    <h3><a href="https://central.sonatype.com/artifact/io.github.amenski/scale4j-core">Scale4j</a></h3>
+    <span class="status"><a href="https://central.sonatype.com/artifact/io.github.amenski/scale4j-core" class="stamp">live · maven central</a></span>
+    <p class="desc">Open-source image processing library for Java 17+. Resize, crop, rotate, filter, and watermark with a fluent API.</p>
+    <p class="meta">Java 17 · Apache-2.0 · <a href="https://github.com/amenski/Scale4j">github</a></p>
+  </article>
+</section>
+
+<section>
+  <h2 class="eyebrow">On the bench</h2>
+
+  <article class="entry rise">
+    <h3>Reputation desk for restaurants</h3>
+    <span class="status"><span class="stamp-bench">in private build</span></span>
+    <p class="desc">One inbox for reviews across platforms, AI-drafted replies a manager approves in one click, sentiment analytics, embeddable review widget. Multi-tenant, covered by 77 end-to-end tests.</p>
+    <p class="meta">Spring Boot 3 · Next.js 16 · Playwright · Google Business Profile integration underway</p>
+  </article>
+</section>
+
+<section>
+  <h2 class="eyebrow">What I take on</h2>
+
+  <div class="service rise"><h3>Backend systems</h3><p>Java/Spring services with PostgreSQL — auth, payments, migrations, and tests. From spec to deployed.</p></div>
+  <div class="service rise"><h3>Mobile apps</h3><p>Flutter for iOS and Android, from first screen to store listing.</p></div>
+  <div class="service rise"><h3>Whole products</h3><p>Backend, app, and web frontend wired together and running on infrastructure you own.</p></div>
+</section>
+
+<section class="contact">
+  <h2 class="eyebrow">Contact</h2>
+  <p>One email, no forms. Tell me what you're building and where it's stuck — I'll reply with how I'd approach it.</p>
+  <p class="channels"><a href="mailto:amantwd@gmail.com">amantwd@gmail.com</a> &nbsp;·&nbsp; <a href="https://github.com/amenski">github.com/amenski</a></p>
+</section>
+
+<footer>
+  <span>Amanuel Getachew · Milan</span>
+  <span>Hand-built. No trackers, no cookies.</span>
+</footer>
+
+</body>
+</html>
